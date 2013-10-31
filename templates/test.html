@@ -1,0 +1,68 @@
+{% extends "template.html" %}
+{% block content %}
+       Enter Python to execute:
+        <form action="{{ url_for('test') }}" method="POST">
+            <input type="text" name="exp" />
+            <input type="submit" value="Execute" />
+        {% with messages = get_flashed_messages(category_filter=["kiir"]) %}
+            {% if messages %}
+                <br>
+                Results:
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+
+            {% endif %}
+        {% endwith %}
+        </form>
+    <br><br>
+
+    <form action="{{ url_for('test') }}" method="POST">
+    Katt ide a játék listáért->
+            <input type="submit" value="Lekérdezés" name="leker"/>
+    </form>
+    {% if dicts %}
+        <div align="center">
+    <table width="20%" border="1" cellpadding="4" cellspacing="0" style="border: 2px solid #eeeeee;" >
+
+        <tr >
+            <td>
+                <font size=5>Név</font>
+            </td>
+            <td>
+                <font size=5>Ára</font>
+            </td>
+        </tr>
+            {% for k, v in dicts.items() %}
+               <tr>
+                    <td>
+                        {{ k.title() }}
+                    </td>
+                    <td>
+                            {{ v }} euró
+                    </td>
+                </tr>
+            {% endfor %}
+       {% endif %}
+    </table>
+</div>
+    <br>
+    <div align="left">
+     <form action="{{ url_for('test') }}" method="POST">
+    Katt ide a pontos időért->
+            <input type="submit" value="Pontos idő" name="ido"/>
+    </form>
+        {% with messages = get_flashed_messages(category_filter=["ido"]) %}
+            {% if messages %}
+                <br>
+                A pontos idő:
+                    {% for message in messages %}
+                        <h3>{{ message }}</h3>
+                    {% endfor %}
+
+            {% endif %}
+        {% endwith %}
+</div>
+
+{% endblock %}
+

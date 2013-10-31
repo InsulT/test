@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Welcome to InsulT's page </title>
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    </head>
+    <body>
+    <section id="wrapper">
+    <nav>
+        <ul>
+            <li><a href="/">InsulT Home</a></li>
+            <li><a class="dropdown" href="/welcome">Welcome</a>
+                <ul>
+                    <li><a href="/welcome">welcome</a></li>
+                    <li><a href="/test">test</a></li>
+                    <li><a href="anyad">almenu 3</a></li>
+                </ul>
+            </li>
+            <li><a href="">harmadik</a></li>
+            <li><a href="">negyedik</a></li>
+            <li><a href="">otodik</a></li>
+        </ul>
+    </nav>
+</section>
+        <div class="container" align="left">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
+

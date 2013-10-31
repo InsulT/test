@@ -1,0 +1,106 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0
+}
+body {
+    font: 13px arial;
+    color: #bbbbbb;
+    background: #373737;
+    margin: 40px;
+    text-align: center;
+    background: linear-gradient(to bottom, #373737 0%,#606060 100%) fixed
+}
+a { text-decoration: none }
+section#wrapper {
+    min-width:700px;
+}
+nav {
+    margin: 0 0 40px 0;
+    font-size: 20px;
+    font-weight: bold
+}
+nav ul {
+    list-style: none;
+    width: 100%
+}
+nav li {
+    float: left;
+    position: relative;
+    min-width: 20%;
+}
+nav li:first-child a {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 10px;
+}
+nav li:last-child a {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 10px;
+}
+nav ul li ul li:first-child a { border-radius: 0}
+nav ul li ul li:last-child a {
+    border-radius: 0;
+    border: 0
+}
+nav a {
+    background: #ffa14c;
+    background: linear-gradient(to bottom,  #ffa84c 0%,#ff7b0d 100%);
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+    color: #444;
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
+    transition: all .25s ease;
+    border-right: 2px solid #000
+}
+nav li:hover a {
+    background: #8fc400;
+    background: linear-gradient(to bottom,  #8fc400 0%,#80aa00 100%);
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(1,1,1,0.5);
+}
+nav li ul {
+    float: left;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 40px;
+    visibility: hidden;
+    transition: all .25s;
+}
+nav li:hover ul {
+    opacity: 1;
+    top: 45px;
+    visibility: visible
+}
+nav li ul li {
+    float: none;
+    width: 100%;
+    background: #202020;
+    font-weight: normal;
+    font-size: 15px;
+}
+nav li ul li a {
+    border: 0;
+    background: #000 !important
+}
+nav li ul li a:hover {
+    background: #4f4f4f !important
+}
+section#content {
+    line-height: 18px;
+}
+section#content p {
+    margin: 0 0 20px 0;
+    text-align: justify
+}
+nav ul:first-child:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.lejebb {
+    font-size: 30px;
+}
